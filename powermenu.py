@@ -1,28 +1,28 @@
 import tkinter as tk;
 import os;
 
-# Inicialización de la Ventana
+# Window Initialization
 window = tk.Tk();
 window.title("Power Menu");
 window.geometry("400x230");
 
-# Funciones de sesión
+# Poweroff functions
 def pwoff():
     os.system("systemctl poweroff")
 
-# Funcion para Reiniciar
+# Reboot function
 def rboot():
     os.system("systemctl reboot")
 
-# Funcion para Cerrar Sesión
+# Logout function
 def lgout():
     os.system("i3-msg exit")
 
-# Funcion para cerrar la ventana
+# Function to close the SimplePowerMenu
 def close_win(e):
     window.destroy()
 
-# Creación botones de la interfaz
+# Interface buttons
 poweroff = tk.Button(
     text="⏻",
     foreground="white",  # Set the text color to white
@@ -56,18 +56,18 @@ logout = tk.Button(
     command=lgout
 );
 
-# Adición de los botones a la interfaz
+# Adding buttons to the interface
 poweroff.grid(row=1,column=1,padx=10, pady=10)
 reboot.grid(row=1,column=2,padx=10)
 logout.grid(row=1,column=3,padx=10)
 
-# Creación de las etiquetas de la intefaz
+# Creation of the interface labels
 lblMain = tk.Label(text="¿Qué acción desea realizar?", font=("Source Sans 3", 13))
 lblPowerOff = tk.Label(text="Apagar",font=("Source Sans 3", 11))
 lblReboot = tk.Label(text="Reiniciar",font=("Source Sans 3", 11))
 lblLogOut = tk.Label(text="Salir", font=("Source Sans 3", 11))
 
-# Adición de las etiquetas a la interfaz
+# Adding labels to the interface
 lblMain.grid(row=0, column=1, columnspan=3, padx=10, pady=10)
 lblPowerOff.grid(row=2, column=1, padx=10, pady=10)
 lblReboot.grid(row=2, column=2, padx=10, pady=10)
